@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+ import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import TodoForm from './component/TodoForm';
 
+import EditUser from './component/EditUser';
+import { Suspense, } from 'react';
+const TodoForm = React.lazy(()=>import('./component/TodoForm')) ;
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+ 
+      <div className="App">
+      <div>
+      <Suspense fallback={<div>Please wait........</div>}>
+      <TodoForm/>
+      </Suspense>
+       
+      </div>
+      <BrowserRouter>
+      
+      
+      <Routes>
+     
+      <Route path="/edit" element={<EditUser/>} />
+      </Routes>
+      </BrowserRouter>
+      
+      </div>
+   
+    
+    
+    </>
+    
+
+    
+  
   );
 }
 

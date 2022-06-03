@@ -1,0 +1,23 @@
+.main-row{
+    height: 100vh;
+}
+.main-col{
+    max-width: 500px;
+    min-height: 300px;
+}
+.todo-done{
+    text-decoration: line-through;
+}
+img {
+    width: 300px;
+  height: 150px;
+  border: 1px solid blue;
+  object-fit: cover;
+
+}
+.Items{
+    width: 300px;
+    height: 150px;
+    margin: auto;
+    border: 1px solid blue;
+}
